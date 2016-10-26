@@ -41,6 +41,13 @@ minikube start --vm-driver=xhyve
 minikube dashboard
 ```
 
+### GNU/Linux
+
+```bash
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.12.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+curl -Lo kubectl http://storage.googleapis.com/kubernetes-release/release/v1.3.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+```
+
 ## Déploiement sur minikube
 
 _Sur minikube_
@@ -102,3 +109,10 @@ Exercice : déployer la nouvelle version de l'application sur minikube.
 Solution :
 
 * [code](https://github.com/Oxalide/docker-workshop-advanced/tree/redis/k8s)
+
+## Cleanup
+
+```bash
+minikube delete
+rm -rf ~/.minikube/
+```
